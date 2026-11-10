@@ -22,6 +22,7 @@ import { Reviews } from './collections/Reviews'
 import { Users } from './collections/Users'
 import { HomePage } from './globals/HomePage'
 import { SiteSettings } from './globals/SiteSettings'
+import { siteUrl } from './lib/site-url'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -39,7 +40,7 @@ const connectionString =
   (process.env.DB_DIRECT && process.env.DATABASE_URL_UNPOOLED) || process.env.DATABASE_URL || ''
 
 export default buildConfig({
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || '',
+  serverURL: siteUrl,
   admin: {
     user: Users.slug,
     dateFormat: 'dd/MM/yyyy HH:mm',

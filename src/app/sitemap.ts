@@ -2,10 +2,11 @@ import type { MetadataRoute } from 'next'
 
 import { categoryHref, collectionHref, href, locales, postCategoryHref, postHref, routes, withLocale } from '@/i18n/config'
 import { getClient } from '@/lib/payload'
+import { siteUrl } from '@/lib/site-url'
 
 export const revalidate = 3600
 
-const SITE = (process.env.NEXT_PUBLIC_SERVER_URL || 'https://sochiustudio.com').replace(/\/$/, '')
+const SITE = siteUrl
 
 /** Every public page in both languages. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

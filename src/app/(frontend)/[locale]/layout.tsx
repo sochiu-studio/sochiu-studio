@@ -10,6 +10,7 @@ import { Reveal } from '@/components/site/Reveal'
 import { isLocale, locales } from '@/i18n/config'
 import { dict } from '@/i18n/dict'
 import { getClient } from '@/lib/payload'
+import { siteUrl } from '@/lib/site-url'
 
 import '../styles.css'
 
@@ -18,7 +19,7 @@ const inter = Inter({ subsets: ['latin', 'vietnamese'], variable: '--font-inter'
 export const generateStaticParams = () => locales.map((locale) => ({ locale }))
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || 'https://sochiustudio.com'),
+  metadataBase: new URL(siteUrl),
   title: { default: 'Sochiu Studio', template: '%s - Sochiu Studio' },
   icons: { icon: '/brand/favicon-32.png', apple: '/brand/icon.png' },
 }

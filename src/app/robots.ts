@@ -1,6 +1,8 @@
 import type { MetadataRoute } from 'next'
 
-const SITE = (process.env.NEXT_PUBLIC_SERVER_URL || 'https://sochiustudio.com').replace(/\/$/, '')
+import { siteUrl } from '@/lib/site-url'
+
+const SITE = siteUrl
 
 export default function robots(): MetadataRoute.Robots {
   return {
