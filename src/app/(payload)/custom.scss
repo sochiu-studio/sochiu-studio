@@ -1,0 +1,7 @@
+// Admin theme; see payloadTheme() in src/payload.config.ts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&subset=vietnamese');
+@import 'payload-theme/styles.css';
+
+.collection-list .table td {
+  vertical-align: middle;
+}
